@@ -46,28 +46,5 @@ import OrderTerm from '@/types/OrderTerm'
 
 
 <style lang="sass" scoped>
-.job-list 
-  max-width: 960px
-  margin: 40px auto
-  ul 
-    padding: 0
-  li 
-    list-style-type: none
-    background: white
-    padding: 16px
-    margin: 16px 0
-    border-radius: 4px
-  h2 
-    margin: 0 0 10px
-    text-transform: capitalize
-
-.salary 
-  display: flex
-  p 
-    color: green
-    font-weight: bold
-    margin: 10px 4px
-.list-move
-    transition: all 1s
   
   </style>

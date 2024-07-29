@@ -1,4 +1,89 @@
 body {
   font-family: "Courier New", Courier, monospace;
   background: beige;
+}
+
+h1 {
+  text-align: center;
+  margin: 50px;
+}
+
+header {
+  text-align: center;
+}
+header .order {
+  margin-top: 20px;
+}
+
+button {
+  margin: 0 10px;
+  color: green;
+  border: 3px solid green;
+  background: beige;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.add-job {
+  margin-top: 20px;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div {
+  margin-bottom: 10px;
+}
+
+label {
+  margin-right: 10px;
+}
+
+input {
+  width: 300px;
+  height: 40px;
+  padding-left: 20px;
+  display: block;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid green;
+}
+
+.job-list {
+  max-width: 960px;
+  margin: 40px auto;
+}
+.job-list ul {
+  padding: 0;
+}
+.job-list li {
+  list-style-type: none;
+  background: white;
+  padding: 16px;
+  margin: 16px 0;
+  border-radius: 4px;
+}
+.job-list h2 {
+  margin: 0 0 10px;
+  text-transform: capitalize;
+}
+
+.salary {
+  display: flex;
+}
+.salary p {
+  color: green;
+  font-weight: 900;
+  margin: 10px 4px;
+}
+
+.list-move {
+  transition: all 1s;
 }/*# sourceMappingURL=global.css.map */
