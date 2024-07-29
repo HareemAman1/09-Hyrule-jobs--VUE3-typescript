@@ -59,7 +59,7 @@ export default defineComponent({
     const newJob = ref<Job>({
       title: '',
       location: '',
-      salary: 0,
+      salary: 1000,
       id: '',
     });
 
