@@ -54,6 +54,11 @@ export default defineComponent({
         salary: 4000,
         id: '5'
       },
+      {title: 'Node js',
+        location: 'UAE',
+        salary: 29000,
+        id: '6'
+      },
     ])
     const order = ref<OrderTerm>('title')
 
