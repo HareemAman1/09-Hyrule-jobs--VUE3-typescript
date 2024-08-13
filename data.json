@@ -1,0 +1,17 @@
+[
+  {
+    "title": "dev op",
+    "location": "khi",
+    "salary": 5000
+  },
+  {
+    "title": "dev op",
+    "location": "lhr",
+    "salary": 5000
+  },
+  {
+    "title": "dev op",
+    "location": "lhr",
+    "salary": "5000"
+  }
+]

@@ -35,10 +35,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
+import { defineComponent, ref, onMounted } from 'vue';
 import JobList from './components/JobList.vue';
 import Job from '@/types/Job';
 import OrderTerm from '@/types/OrderTerm';
+import axios from 'axios';
 
 export default defineComponent({
   name: 'App',
@@ -54,6 +55,7 @@ export default defineComponent({
       { title: 'mern', location: 'karachi', salary: 4000, id: '5' },
       { title: 'Node js', location: 'uae', salary: 29000, id: '6' },
     ]);
+    // const jobs = ref<Job[]>([]);
     const order = ref<OrderTerm>('title');
 
     const newJob = ref<Job>({
@@ -63,15 +65,39 @@ export default defineComponent({
       id: '',
     });
 
+    // Fetch jobs
+    const fetchJobs = async () => {
+      try {
+        const response = await axios.get('http://localhost:3000/jobs');
+        jobs.value = response.data;
+      } catch (error) {
+        console.error('Error fetching jobs:', error);
+      }
+    };
+
+    // Add new job
+    const addJob = async () => {
+      newJob.value.id = Date.now().toString(); 
+      try {
+        await axios.post('http://localhost:3000/jobs', newJob.value);
+        jobs.value.push({ ...newJob.value });
+        newJob.value = { title: '', location: '', salary: 1000, id: '' }; 
+      } catch (error) {
+        console.error('Error adding job:', error);
+      }
+    };
+
     const handleClick = (term: OrderTerm) => {
       order.value = term;
     };
 
-    const addJob = () => {
-      newJob.value.id = Date.now().toString(); // Generate a unique ID based on timestamp
-      jobs.value.push({ ...newJob.value });
-      newJob.value = { title: '', location: '', salary: 0, id: '' }; // Reset the form
-    };
+    // const addJob = () => {
+    //   newJob.value.id = Date.now().toString(); // Generate a unique ID based on timestamp
+    //   jobs.value.push({ ...newJob.value });
+    //   newJob.value = { title: '', location: '', salary: 0, id: '' }; // Reset the form
+    // };
+
+    onMounted(fetchJobs);
 
     return { jobs, handleClick, order, newJob, addJob };
   },
