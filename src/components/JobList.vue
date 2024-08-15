@@ -46,5 +46,4 @@ import OrderTerm from '@/types/OrderTerm'
 
 
 <style lang="sass" scoped>
-  
   </style>
